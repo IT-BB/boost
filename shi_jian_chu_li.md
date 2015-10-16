@@ -82,7 +82,7 @@ int main()
 和前一个例子相类似，`func()` 被关联至 f。 当 f 被调用时，就会相应地执行 `func()`。 Boost.Function 仅限于这种情形下适用，而 Boost.Signals 则提供了多得多的方式，如关联多个函数至单个特定信号，示例如下。
 
 ~~~
-#include <boost/signal.hpp> 
+#include <boost/signal.hpp>  //#include <boost/signals2.hpp>
 #include <iostream> 
 
 void func1() 
@@ -97,7 +97,7 @@ void func2()
 
 int main() 
 { 
-  boost::signal<void ()> s; 
+  boost::signal<void ()> s; //boost::signals2::signal<void ()> s;
   s.connect(func1); 
   s.connect(func2); 
   s(); 
